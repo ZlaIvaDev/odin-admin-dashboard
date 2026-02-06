@@ -1,6 +1,18 @@
 :root {
     font-size: 16px;
+    font-family: 'Retroscape';
+    background-color: rgb(213, 231, 227);
 }
+
+@font-face {
+    font-family: 'Retroscape';
+    src: url('Retroscape.woff2') format('woff2'),
+        url('Retroscape.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 *,
 ::before,
@@ -19,128 +31,173 @@ small { font-size: 0.875rem; }
 
 img {
     width: 2rem;
-}
 
-.field {
-    width: 25rem;
-    height: 2.5rem;
 }
 
 .grid-container {
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 6fr;
-}
-
-/* grid base layout*/
-/* 5 kolona    -   7 redova lol*/
-.sidebar {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(10, 1fr);
-    background-color: rgb(46, 183, 204);
-}
-.sidebar-img {
-    grid-column-start: 1;
-    grid-column-end: 2;
-}
-.sidebar-links {
-    grid-column-start: 2;
-    font-size: 1.5rem;
+    grid-template-rows: 1.5fr 8.5fr;
 }
 
 a {
     text-decoration: none;
-    color: whitesmoke;
+    color: rgb(182, 1, 1);
+    font-size: 1.5rem;
 }
-/*HEADER AREA STYLE IS HERE*/
+
+h2 {
+    margin-left: 1rem;
+    margin-top: 2rem;
+}
+
+/* HEADER AREA*/
 .header {
-    grid-column: 2 / 2;
-    grid-row: 1;
-    background-color: rgb(226, 251, 252);
-
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-
-.search-area {
-    grid-column: 1;
-    grid-row: 1;
-}
-.nomen {
-    grid-column: 1;
-    grid-row: 2;
-}
-.btn-area {
     grid-column: 2;
-    grid-row: 1 / 2;
-}
-.btn {
-    padding: 0.5rem;
-    font-size: 1.4rem;
-    border-radius: 4rem;
-    margin: 0 1rem;
-    background-color: rgb(46, 183, 204);
-    color: whitesmoke;
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(181, 190, 199);
 }
 
 
+
+/* DASHBOARD AREA */
+.sidebar {
+    grid-column: 1;
+    grid-row: 1 / 3;
+
+    padding: 1rem;
+    background-color: rgb(26, 175, 180);
+
+
+}
+.home-links, .settings-links {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+a {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.dash > a {
+    font-size: 2rem;
+}
+
+
+/* MAIN CONTENT -> PROJECTS AREA*/
+.card {
+    background-color: white;
+}
 
 .content {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-}
+    grid-column: 2;
+    grid-row: 2;
 
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+
+    
+}
 .projects {
-    grid-column: 1 / 2;
-    background-color: rgb(242, 248, 253);
-
-    display: grid;
-    grid-template-columns: 1.5fr 1.5fr;
-    grid-template-rows: repeat(3, 1fr);
-    gap: 1rem;
-    padding: 0.5rem;
+    margin: 1rem;
 }
-div > .card {
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 2rem;
+
+}
+.projects-grid >.card {
     border: 1px solid black;
     padding: 1rem;
     margin: 1rem;
-    height: 300px;
-    justify-content: baseline;
-
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    justify-content: space-around;
-
-    border-radius: 0.5rem;
-    background-color: rgb(240, 245, 245);
-
+    border-radius: 1rem;
 }
 
-h4 {
-    grid-column: 1 / 3;
-    grid-row: 1 / 1;
-}
-.text {
-    grid-column: 1 / 3;
-    grid-row:  2 / 4;
+
+
+
+/* MAIN SUB -> ASIDE AREA*/
+.announcements {
+    grid-column: 2;
 }
 
-h4, .text {
+.announcements > .card, .announcements > .announcements-section {
+    
+    border: 1px solid black;
     padding: 1rem;
-    overflow: hidden;
-}
-.img-container {
-    grid-column-start: -1;
-    grid-row-start: -1;
+    margin: 1rem;
+    border-radius: 1rem;
 }
 
 .announcements {
-    background-color: rgb(242, 248, 253);
-    grid-column: 2 / 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 1rem;
 
 }
+
+.announcements > .announcements-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    background-color: white;
+
+}
+
+
+
+.announcements > section.card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.trending {
+    flex: 1;
+    display: flex;
+    gap: 15px;
+    padding: 1rem;
+}
+
+/* FONT COLORS ETC*/
+p{
+    color:rgb(98, 109, 121);
+}
+a {
+    color: white;
+    font-weight: 700;
+}
+button {
+    padding: 0.5rem 1.25rem;
+    border-radius: 1rem;
+    color: white;
+    background-color: rgb(26, 175, 180);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+
+
+/*
+<body>
+  <aside class="sidebar">...</aside>
+
+  <header class="header">...</header>
+
+  <main class="content">
+    <section class="projects">...</section>
+    <aside class="announcements">...</aside>
+  </main>
+</body>
+*/
