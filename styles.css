@@ -66,8 +66,10 @@ h2 {
 
     display: flex;
     justify-content: space-between;
-    background-color: rgb(181, 190, 199);
+    background-color: rgb(201, 213, 253);
     padding: 1rem 2rem;
+
+    box-shadow: 10px 10px 100px 10px rgb(100, 120, 150);
 }
 
 .left-header {
@@ -123,6 +125,7 @@ button {
 
     padding: 1rem;
     background-color: rgb(26, 175, 180);
+    box-shadow: 1px 1px 500px rgb(26, 175, 180);
 
 
 }
@@ -175,6 +178,8 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    box-shadow: -0.5rem 2rem 2rem 1px rgba(16, 145, 145, 0.5);
 }
 
 .img-container {
@@ -193,6 +198,7 @@ a {
     padding: 1rem;
     margin: 1rem;
     border-radius: 1rem;
+    box-shadow: -0.5rem 2rem 2rem 1px rgba(16, 145, 145, 0.5);
 }
 
 .announcements {
@@ -226,6 +232,7 @@ a {
     display: flex;
     gap: 15px;
     padding: 1rem;
+    
 }
 
 /* FONT COLORS ETC*/
@@ -244,18 +251,3 @@ button {
     font-size: 1.25rem;
     font-weight: 700;
 }
-
-
-
-/*
-<body>
-  <aside class="sidebar">...</aside>
-
-  <header class="header">...</header>
-
-  <main class="content">
-    <section class="projects">...</section>
-    <aside class="announcements">...</aside>
-  </main>
-</body>
-*/
